@@ -20,7 +20,9 @@ localidades <- dplyr::filter(todas_localidades, assignment %in% c("1"))
 localidades <- data.frame("localidad_id" = localidades$LocalidadId, 
                           "lon" = localidades$loc_lon, 
                           "lat" =localidades$loc_lat, 
-                          "distance" = localidades$distance_to_bansefi)
+                          "distance" = localidades$distance_to_bansefi,
+                          "desc_edo" = localidades$Desc_edo,
+                          "desc_mun" = localidades$Desc_mun)
 
 #Escribimos los datos de las localidades con las que vamos a trabajar
 write.csv(localidades, './data/01_output_localities.csv',row.names=FALSE)
